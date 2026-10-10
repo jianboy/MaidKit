@@ -17,6 +17,7 @@ import 'port_forwarding_models.dart';
 import 'runtime_metrics_collector.dart';
 import 'server_metrics_collector.dart';
 import 'server_models.dart';
+import 'ssh_algorithms.dart';
 import 'ssh_proxy_connect.dart';
 import 'socks5_protocol.dart';
 import 'systemd_models.dart';
@@ -4741,6 +4742,7 @@ uname -r
       socket,
       username: server.username,
       identities: identities,
+      algorithms: maidKitSshAlgorithms,
       onPasswordRequest: credential.type == CredentialType.password
           ? () => credential.password
           : null,
